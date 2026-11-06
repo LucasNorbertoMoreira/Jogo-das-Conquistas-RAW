@@ -1,45 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="flex-row">
-        <div class="titulo">            
-            <h1>Minhas Metas</h1>
-            <p class="subtitulo">Transforme sua disciplina em XP.</p>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minhas Metas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- parte do topo -->
+      <div class="linha-superior flex-row">
+        <div class="titulo">
+          <h1>Minhas Metas</h1>
+          <p class="subtitulo">Transforme sua disciplina em XP.</p>
         </div>
-        <div class="areaXp">
-            <div class="flex-row nivelXp">
-                <h3>Nível 1</h3>
-                <p>0/500</p>
-            </div>
-            <div class="barraXp"></div>
-        </div>
-        <div class="selectMetas flex-row">
-            <p>Metinhas</p>
-            <p>Metas</p>
-            <p>Metonas</p>
-        </div>
-    </header>
-    <main class="flex-row">
-        <div class="blocoPrioridade" id="pAlta">
-            <h2 class="subtitulo">Prioridade Alta</h2>
-            <div class="blocoMeta"></div>
-        </div>
-        <div class="blocoPrioridade" id="pMedia">
-            <h2 class="subtitulo">Prioridade Média</h2>
-            <div class="blocoMeta"></div>
-            
-        </div>
-        <div class="blocoPrioridade" id="pBaixa">
-            <h2 class="subtitulo">Prioridade Baixa</h2>
-            <div class="blocoMeta"></div>
 
+        <div class="areaXp">
+          <div class="nivelXp flex-row">
+            <p class="nivel-texto">Nível 1</p>
+            <p class="xp-texto">0 / 500 XP</p>
+          </div>
+          <div class="fundoBarraXp">
+            <div class="barraXp"></div>
+          </div>
         </div>
+      </div>
+
+      <div class="linha-inferior flex-row">
+        <div class="espaçador"></div>
+
+        <div class="selectMetas flex-row">
+          <p class="aba ativo">Metinhas</p>
+          <p class="aba">Metas</p>
+          <p class="aba">Metonas</p>
+        </div>
+
+        <div class="area-nova-meta">
+          <button class="btn-nova-meta">+ Nova Meta</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-row">
+      <div class="blocoPrioridade" id="pAlta">
+        <h2 class="titulo-prioridade">Prioridade Alta</h2>
+
+        <div class="blocoMeta">
+          <div class="cartaoMeta">
+            <div class="cartao-info">
+              <span class="tag-tipo">METINHA</span>
+              <h3 class="titulo-meta">Gravar e postar 1 vídeo</h3>
+
+              <div class="tags-meta flex-row">
+                <span class="tag tag-categoria">#Mentor Digital</span>
+                <span class="tag tag-xp">+200 XP</span>
+              </div>
+
+              <p class="prazo-meta">Prazo: 25/02/2026</p>
+            </div>
+
+            <div class="cartao-acoes flex-coluna">
+              <button class="btn-acao btn-editar">
+                <!-- icone do lapis -->
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#a0aabf"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"
+                  ></path>
+                </svg>
+              </button>
+              <button class="btn-acao btn-concluir">
+                <!-- icone checkzinho -->
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="#4ade80"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    fill="#4ade80"
+                    stroke="none"
+                  ></circle>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </button>
+              <button class="btn-acao btn-deletar">
+                <!-- icone lixo (corinthians) -->
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ef4444"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="3 6 5 6 21 6"></polyline>
+                  <path
+                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="blocoPrioridade" id="pMedia">
+        <h2 class="titulo-prioridade">Prioridade Média</h2>
+        <div class="blocoMeta"></div>
+      </div>
+
+      <div class="blocoPrioridade" id="pBaixa">
+        <h2 class="titulo-prioridade">Prioridade Baixa</h2>
+        <div class="blocoMeta"></div>
+      </div>
     </main>
-</body>
+  </body>
 </html>
