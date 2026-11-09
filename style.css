@@ -298,3 +298,9 @@ main.flex-row {
 .btn-acao:hover {
   transform: scale(1.1);
 }
+
+.blocoMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}

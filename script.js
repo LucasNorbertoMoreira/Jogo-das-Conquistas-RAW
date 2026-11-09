@@ -1,5 +1,5 @@
 const btnNovaMeta = document.querySelector(".btn-nova-meta");
-const colunaAlta = document.querySelector("#pAlta .blocoMeta"); // Por padrão, MVP joga na Alta
+const colunaAlta = document.querySelector("#pAlta .blocoMeta");
 const xpTexto = document.querySelector(".xp-texto");
 const barraXp = document.querySelector(".barraXp");
 
@@ -11,10 +11,12 @@ function criarCartaoMeta(titulo, prazo) {
   const cartao = document.createElement("div");
   cartao.classList.add("cartaoMeta");
 
+  const textoPrazo = prazo ? `Prazo: ${prazo}` : "Sem prazo definido";
+
   cartao.innerHTML = `
         <div class="cartao-info">
             <h3 class="titulo-meta">${titulo}</h3>
-            <p class="prazo-meta">Prazo: ${prazo}</p>
+            <p class="prazo-meta">${textoPrazo}</p>
         </div>
         
         <div class="cartao-acoes flex-coluna">
@@ -50,7 +52,6 @@ function adicionarXP(quantidade) {
   }
 
   xpTexto.innerText = `${xpAtual} / ${xpMaximo} XP`;
-
   const porcentagem = (xpAtual / xpMaximo) * 100;
   barraXp.style.width = `${porcentagem}%`;
 }
@@ -59,10 +60,16 @@ btnNovaMeta.addEventListener("click", () => {
   const titulo = prompt("Qual é o nome da meta?");
   if (!titulo) return;
 
-  const prazo = prompt("Qual é o prazo? (Ex: 25/02/2026)");
-  if (!prazo) return;
+  const prazo = prompt(
+    "Qual é o prazo? (Ex: 25/02/2026)\nPode deixar em branco se não tiver data.",
+  );
 
   const novoCartao = criarCartaoMeta(titulo, prazo);
-
-  colunaAlta.appendChild(novoCartao);
+  if (colunaAlta) {
+    colunaAlta.appendChild(novoCartao);
+  } else {
+    alert(
+      "Erro: A div class='blocoMeta' não foi encontrada dentro da Prioridade Alta no seu HTML.",
+    );
+  }
 });
