@@ -6,6 +6,8 @@
   --cor-destaque: #c07bf2;
   --cor-destaque-bg: #c07bf233;
   --cor-borda: #c4d8f31a;
+  --cor-media: #facc15;
+  --cor-baixa: #4ade80;
 
   --cor-sucesso: #4ade80;
   --cor-erro: #ef4444;
@@ -303,4 +305,12 @@ main.flex-row {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+}
+
+.cartaoMeta.prioridade-media::before {
+  background-color: var(--cor-media);
+}
+
+.cartaoMeta.prioridade-baixa::before {
+  background-color: var(--cor-baixa);
 }
