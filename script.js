@@ -7,14 +7,20 @@ const barraXp = document.querySelector(".barraXp");
 
 let xpAtual = 0;
 const xpMaximo = 500;
-const xpPorMeta = 50;
 
 function criarCartaoMeta(titulo, prazo, prioridade) {
   const cartao = document.createElement("div");
   cartao.classList.add("cartaoMeta");
 
-  if (prioridade === "2") cartao.classList.add("prioridade-media");
-  if (prioridade === "3") cartao.classList.add("prioridade-baixa");
+  let xpDaMeta = 50;
+
+  if (prioridade === "2") {
+    cartao.classList.add("prioridade-media");
+    xpDaMeta = 25;
+  } else if (prioridade === "3") {
+    cartao.classList.add("prioridade-baixa");
+    xpDaMeta = 10;
+  }
 
   const textoPrazo = prazo ? `Prazo: ${prazo}` : "Sem prazo definido";
 
@@ -41,7 +47,7 @@ function criarCartaoMeta(titulo, prazo, prioridade) {
   const btnDeletar = cartao.querySelector(".btn-deletar");
 
   btnConcluir.addEventListener("click", () => {
-    adicionarXP(xpPorMeta);
+    adicionarXP(xpDaMeta);
     cartao.remove();
   });
 
@@ -65,10 +71,9 @@ function adicionarXP(quantidade) {
 }
 
 btnNovaMeta.addEventListener("click", (e) => {
-  e.preventDefault(); // Trava qualquer comportamento padrão que recarregue a tela
+  e.preventDefault();
 
   let titulo = prompt("Qual é o nome da meta?");
-
   if (!titulo || titulo.trim() === "") return;
   titulo = titulo.trim();
 
