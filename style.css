@@ -314,3 +314,44 @@ main.flex-row {
 .cartaoMeta.prioridade-baixa::before {
   background-color: var(--cor-baixa);
 }
+
+/* =========================================
+   RESPONSIVIDADE (MOBILE)
+========================================= */
+@media (max-width: 768px) {
+  html {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .linha-superior,
+  .linha-inferior,
+  main.flex-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2.4rem;
+  }
+
+  /* 3. Ajustes no Cabeçalho */
+  .linha-superior {
+    align-items: center;
+    text-align: center;
+  }
+
+  .areaXp {
+    width: 100%;
+  }
+
+  .espaçador {
+    display: none;
+  }
+
+  .area-nova-meta,
+  .btn-nova-meta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  main.flex-row {
+    gap: 4.8rem;
+  }
+}
